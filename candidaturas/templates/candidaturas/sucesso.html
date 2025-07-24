@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sucesso</title>
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="/vagas/">🏠 Início</a>
+        <a href="/vagas/nova/">📢 Cadastrar Vaga</a>
+        <a href="/candidatar/nova/">➕ Nova Candidatura</a>
+        <a href="/candidatar/lista/">📋 Ver Candidaturas</a>
+    </div>
+
+
+    <div class="success-container">
+        <h2>Candidatura enviada com sucesso!</h2>
+        <p>Obrigado por enviar seu currículo. Boa sorte! ✨</p>
+        <a class="btn" href="/vagas/">🔙 Voltar para as vagas</a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enviar Candidatura</title>
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="/vagas/">🏠 Início</a>
+        <a href="/vagas/nova/">📢 Cadastrar Vaga</a>
+        <a href="/candidatar/nova/">➕ Nova Candidatura</a>
+        <a href="/candidatar/lista/">📋 Ver Candidaturas</a>
+    </div>
+
+
+    <div class="form-container">
+        <h2>Enviar Candidatura</h2>
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.nome.label_tag }}<br>
+                {{ form.nome }}
+            </div>
+
+            <div class="form-group">
+                {{ form.email.label_tag }}<br>
+                {{ form.email }}
+            </div>
+
+            <div class="form-group">
+                {{ form.vaga.label_tag }}<br>
+                {{ form.vaga }}
+            </div>
+
+            <div class="form-group">
+                {{ form.curriculo.label_tag }}<br>
+                {{ form.curriculo }}
+            </div>
+
+            <button type="submit">📤 Enviar Candidatura</button>
+        </form>
+    </div>
+
+</body>
+</html>
