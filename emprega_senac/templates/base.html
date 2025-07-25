@@ -7,31 +7,38 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">EmpregaSenac</a>
     <div class="collapse navbar-collapse">
-      <ul class="navbar-nav me-auto">
+      <ul class="navbar-nav me-auto d-flex flex-wrap gap-2">
 
         
-        <li class="nav-item"><a class="nav-link" href="/">Início</a></li>
-        <li class="nav-item"><a class="nav-link" href="/candidatar/nova/">Nova Candidatura</a></li>
-        <li class="nav-item"><a class="nav-link" href="/candidatar/lista/">Ver Candidaturas</a></li>
+        <li class="nav-item">
+          <a class="btn btn-primary" href="/">🏠 Início</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-primary" href="/candidatar/nova/">➕ Nova Candidatura</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-primary" href="/candidatar/lista/">📋 Ver Candidaturas</a>
+        </li>
 
         {% if user.is_authenticated %}
-          
-          <li class="nav-item"><a class="nav-link" href="/vagas/nova/">Cadastrar Vaga</a></li>
-
-          
+        
+          <li class="nav-item">
+            <a class="btn btn-success" href="/vagas/nova/">📢 Cadastrar Vaga</a>
+          </li>
           <li class="nav-item">
             <form method="post" action="{% url 'logout' %}">
               {% csrf_token %}
-              <button type="submit" class="btn btn-link nav-link" style="padding: 0; margin-left: 10px;">Sair</button>
+              <button type="submit" class="btn btn-danger">🚪 Sair</button>
             </form>
           </li>
         {% else %}
-          
-          <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+          <li class="nav-item">
+            <a class="btn btn-warning" href="{% url 'login' %}">🔐 Login</a>
+          </li>
         {% endif %}
 
       </ul>
