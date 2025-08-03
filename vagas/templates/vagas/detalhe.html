@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ vaga.titulo }}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+</head>
+<body>
+    <div class="container py-4">
+        <a href="/" class="btn btn-secondary mb-3">← Voltar para lista</a>
+
+        <div class="card vaga-card p-4">
+            <h2>{{ vaga.titulo }}</h2>
+            <p><strong>Empresa:</strong> {{ vaga.empresa }}</p>
+            <p><strong>Nível:</strong> {{ vaga.nivel }}</p>
+            <p><strong>Localidade:</strong> {{ vaga.localidade }}</p>
+            <p><strong>Salário:</strong> R$ {{ vaga.salario }}</p>
+            <hr>
+            <p>{{ vaga.descricao }}</p>
+
+            
+            <div class="mt-4">
+                <a href="{% url 'candidatar' %}?vaga={{ vaga.id }}" class="btn btn-success">Candidatar-se</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
